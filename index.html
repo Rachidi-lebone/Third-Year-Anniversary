@@ -1,0 +1,100 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Happy Anniversary 🐧</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+    {
+      "imports": {
+        "canvas-confetti": "https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/+esm"
+      }
+    }
+    </script>
+</head>
+<body>
+    <main id="app-container">
+        <!-- Title Scene -->
+        <section id="title-scene" class="scene active">
+            <div class="scene-content">
+                <p id="title-text" class="title-line"></p>
+                <div id="title-sticker-container"></div>
+                <button id="next-button" class="btn">Next</button>
+            </div>
+        </section>
+
+        <!-- Quiz Scene -->
+        <section id="quiz-scene" class="scene">
+            <div class="scene-content">
+                <div id="quiz-header">
+                    <h2>Our Story Quiz</h2>
+                    <div id="quiz-progress">
+                        <p id="question-counter">Q1 of 10</p>
+                        <p id="quiz-score">Score: 0%</p>
+                    </div>
+                </div>
+                <form id="quiz-form"></form>
+                <div id="quiz-result" aria-live="polite"></div>
+                <button id="quiz-submit-btn" class="btn">Submit Answers</button>
+                <div id="quiz-nav-buttons"></div>
+            </div>
+        </section>
+
+        <!-- Puzzle Scene -->
+        <section id="puzzle-scene" class="scene">
+            <div class="scene-content">
+                <h2>Complete the Heart</h2>
+                <div id="puzzle-container">
+                    <div id="puzzle-board"></div>
+                    <div id="puzzle-hint-container"></div>
+                </div>
+                <div id="puzzle-pieces-container"></div>
+                <button id="puzzle-continue-btn" class="btn" style="display: none;">Great! Continue</button>
+            </div>
+        </section>
+
+        <!-- Unlock Scene -->
+        <section id="unlock-scene" class="scene">
+            <div class="scene-content">
+                <div id="unlock-animation-container">
+                    <div id="unlock-path"></div>
+                    <img id="happy-feet-char" src="happy_feet_char.png" alt="" style="opacity: 0;">
+                    <img id="chest-char" src="chest_closed.png" alt="A closed pixel-art chest">
+                </div>
+                <div id="unlock-keypad">
+                    <label for="unlock-input">Enter our date (DD/MM/YYYY)</label>
+                    <input type="text" id="unlock-input" placeholder="DD/MM/YYYY" maxlength="10">
+                    <p id="unlock-error" class="error-message" aria-live="assertive"></p>
+                    <button id="unlock-submit-btn" class="btn">Unlock</button>
+                    <button id="next-compliment-btn" class="btn-secondary" style="display: none;">Walk</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Letter Scene -->
+        <section id="letter-scene" class="scene">
+             <div class="scene-content">
+                <div id="envelope">
+                    <div id="envelope-flap"></div>
+                    <div id="envelope-body">
+                        <div class="envelope-stamp"></div>
+                        <p class="envelope-label">For Happy Feet 🐧</p>
+                    </div>
+                </div>
+                <div id="letter">
+                    <h3 id="letter-heading"></h3>
+                    <div id="letter-body"></div>
+                </div>
+                 <div id="letter-controls" style="display: none;">
+                    <button id="replay-confetti-btn" class="btn-secondary">Celebrate</button>
+                 </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
